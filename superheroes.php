@@ -1,5 +1,6 @@
 <?php
 
+
 $superheroes = [
   [
       "id" => 1,
@@ -65,8 +66,30 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+
+
+<?php
+
+ if (isset($_GET['hero'])) {
+    $UserHName = htmlspecialchars($_GET['hero']);
+    foreach ($superheroes as $superhero) {
+    if (strcasecmp($superhero['alias'], $UserHName) === 0) {
+        echo "<h3>" . $superhero['alias'] . "</h3>";
+        echo "<h4>" . $superhero['name'] . "</h4>";
+        echo "<p>" . $superhero['biography'] . "</p>";
+        exit;
+    }
+    }
+    echo "SuperHero not found.";
+    
+} else{
+    echo "<ul>";
+    foreach ($superheroes as $superhero){
+        
+        echo "<li>" . $superhero['alias'] ."</li>";   
+        
+     }
+    echo "</ul>";
+}
+
+?>

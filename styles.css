@@ -9,6 +9,19 @@
 
 #searchTxt {
     width: 250px;
-    /*height: 30px;*/
+    /*height: 30px;
+    / example of getting input from query string
+//$UserHName = '';
+
+$UserHName = $_GET['heroName'] ?? '';
+foreach ($superheroes as $superhero) {
+    if (strcasecmp($superhero['alias'], $UserHName) === 0) {
+        echo "<h2>" . htmlspecialchars($superhero['alias']) . "</h2>";
+       
+    }
+}
+echo "Superhero not found.";
+?>
+    */
     font-size: 16px;
 }
