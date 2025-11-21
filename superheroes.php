@@ -74,22 +74,33 @@ $superheroes = [
     $UserHName = htmlspecialchars($_GET['hero']);
     foreach ($superheroes as $superhero) {
     if (strcasecmp($superhero['alias'], $UserHName) === 0) {
-        echo "<h3>" . $superhero['alias'] . "</h3>";
-        echo "<h4>" . $superhero['name'] . "</h4>";
-        echo "<p>" . $superhero['biography'] . "</p>";
+        /*echo html_entity_decode("<h3>  {$superhero['alias']}  </h3>");
+        echo html_entity_decode("<h4>" . $superhero['name'] . "</h4>");
+        echo html_entity_decode("<p>" . $superhero['biography'] . "</p>");
+        
+          */
+        echo html_entity_decode("<h3>");
+        echo html_entity_decode($superhero['alias']);
+        echo html_entity_decode("<h3>");
+        echo html_entity_decode("<h4>");
+        echo html_entity_decode($superhero['name']);
+        echo html_entity_decode("<h4>");
+        echo html_entity_decode("<p>");
+        echo html_entity_decode($superhero['biography']);
+        echo html_entity_decode("<p>");
         exit;
     }
     }
     echo "SuperHero not found.";
     
 } else{
-    echo "<ul>";
+    echo html_entity_decode("<ul>");
     foreach ($superheroes as $superhero){
         
-        echo "<li>" . $superhero['alias'] ."</li>";   
+        echo html_entity_decode("<li>" . $superhero['alias'] ."</li>");   
         
      }
-    echo "</ul>";
+    echo html_entity_decode("</ul>");
 }
 
 ?>

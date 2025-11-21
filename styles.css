@@ -1,27 +1,59 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 10;
+}
 #result {
-    width: 450px;
+    width: 30%;
     height: 450px;
     border: 2px solid #000;
     background-color: #f0f0f0;
     text-align: center;
+    font-size: 18px;
+    margin-left: 35%;
+
+}
+
+#result p {
+    font-style: italic;
+}
+
+header {
+    text-align: center;
+    font-size: 24px;
+    color: #f0f0f0;
+    background-color: rgb(4, 43, 43);
+}
+
+body form{
+    margin: 20px;
+    text-align: center;
+}
+
+
+
+
+#searchTxt {
+    width: 50%;
+    height: 45px;
     font-size: 20px;
 }
 
-#searchTxt {
-    width: 250px;
-    /*height: 30px;
-    / example of getting input from query string
-//$UserHName = '';
-
-$UserHName = $_GET['heroName'] ?? '';
-foreach ($superheroes as $superhero) {
-    if (strcasecmp($superhero['alias'], $UserHName) === 0) {
-        echo "<h2>" . htmlspecialchars($superhero['alias']) . "</h2>";
-       
-    }
+body form label {
+    font-size: 20px;
+    font-weight: bold;
 }
-echo "Superhero not found.";
-?>
-    */
+
+#myBtn {
+    width: 25%;
+    margin-left: 37.5%;
+    margin-bottom: 10px;
+    height: 50px;
     font-size: 16px;
+    background-color: rgb(4, 43, 43);
+    border-radius: 50px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: center;
 }
