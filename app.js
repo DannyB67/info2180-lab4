@@ -1,5 +1,7 @@
 
 let url = "superheroes.php";
+let exp = /\w/;
+let exp1= /\s/;
  document.getElementById("result").innerHTML="Results will be displayed here";
 
 function thisFunc(){
@@ -23,6 +25,10 @@ document.getElementById("myBtn").addEventListener("click", checkSearch);//donoth
 function searchheroes(){
     console.log("we plan to search a hero by clicking a button");
     var heroName=document.getElementById("searchTxt").value.trim();
+    if (heroName.length >25){
+        document.getElementById("result").innerHTML="Name too long!";
+        return;
+    }
     const newXhttp = new XMLHttpRequest();
     newXhttp.open("GET", url+"?hero="+heroName, true);
     newXhttp.onload = function checkStatus() {
@@ -34,6 +40,8 @@ function searchheroes(){
         }
     };
     newXhttp.send();
+
+    
 }
 
 
